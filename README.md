@@ -1,4 +1,4 @@
 # HNG12_Internship
 This repository is for HNG internship
 
-Author <Sanele Skhosana>
+Author <sanzamcmillian@gmail.com>
