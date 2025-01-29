@@ -19,3 +19,7 @@ Develop a Public API that returns the following information in JSON format:
 ## API Specification 
 . Endpoint: GET**
 . Required JSON Response Format (200 OK):
+
+"email": "your-email@example.com",
+"current_datetime": "2025-01-30T09:30:00Z",
+"github_url": "<https://github.com/yourusername/your-repo>"
