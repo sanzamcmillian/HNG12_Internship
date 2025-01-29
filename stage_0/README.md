@@ -13,4 +13,9 @@ Develop a Public API that returns the following information in JSON format:
 1. Technology stack:
 2. Programming language/framework: Use any of the following: C#, PHP, Python, Go, Java, JavaScript, Typescript.
 3. Deployment: The API must be deployed to a publicly accessible endpoint.
-4. CORS Handling:
+4. CORS Handling: Ensure the API handles Cross-Origin Resource Sharing (CORS) appropriately.
+5. Response Format: All responses must be in JSON format.
+
+## API Specification 
+. Endpoint: GET**
+. Required JSON Response Format (200 OK):
