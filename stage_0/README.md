@@ -23,3 +23,8 @@ Develop a Public API that returns the following information in JSON format:
 "email": "your-email@example.com",
 "current_datetime": "2025-01-30T09:30:00Z",
 "github_url": "<https://github.com/yourusername/your-repo>"
+
+## Acceptance Criteria 
+. The API must accept GET requests and return the required JSON response 
+. The current_datetime field must be dynamically generated in ISO 8601 format (UTC).
+. Provides appropriate HTTP status code
