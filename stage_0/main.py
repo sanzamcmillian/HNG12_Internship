@@ -10,7 +10,7 @@ def get_info():
     data = {
         "email": "sanzamcmillian@gmail.com",
         "current_datetime": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
-        "github_url": "https://github.com/sanzamcmillian/HNG12_Internship/tree/main/stage_0"
+        "github_url": "https://github.com/sanzamcmillian/HNG12_Internship/stage_0"
     }
     return jsonify(data)
 
