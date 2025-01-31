@@ -36,4 +36,4 @@ then run ./startup.sh script to deploy locally
 
 ## Technology and Stack
 
-<https://hng.tech/hire/python-developers>
+Python:<https://hng.tech/hire/python-developers>
