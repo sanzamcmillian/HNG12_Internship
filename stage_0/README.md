@@ -28,3 +28,12 @@ Develop a Public API that returns the following information in JSON format:
 . The API must accept GET requests and return the required JSON response 
 . The current_datetime field must be dynamically generated in ISO 8601 format (UTC).
 . Provides appropriate HTTP status code
+
+## Usage
+
+run the requirement.txt file using -r flag
+then run ./startup.sh script to deploy locally 
+
+## Technology and Stack
+
+<https://hng.tech/hire/python-developers>
