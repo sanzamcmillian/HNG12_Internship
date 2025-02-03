@@ -16,6 +16,8 @@ This project is about creating an API that takes a number and returns an interes
 ## API Specification
 > Endpoint: GET** <your-domain.com>/api/classify-number?number=371
 > Required JSON Response Format (200 OK):
+> Required JSON Response Format (400 Bad Request):
+  {"number": "alphabet", "error": true}
 
 ## Acceptance Criteria Functionality
 . Accepts GET requests with a number parameter.
