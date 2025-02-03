@@ -16,6 +16,7 @@ This project is about creating an API that takes a number and returns an interes
 ## API Specification
 > Endpoint: GET** <your-domain.com>/api/classify-number?number=371
 > Required JSON Response Format (200 OK):
+  { "number": 371, "is_prime": false, "is_perfect": false, "properties": ["armstrong", "odd"], "digit_sum": 11 // sum of its digits, "fun_fact": "371 is an Armstrong number because 3^3 + 7^3 + 1^3 = 371" //gotten from the numbers API } 
 > Required JSON Response Format (400 Bad Request):
   {"number": "alphabet", "error": true}
 
