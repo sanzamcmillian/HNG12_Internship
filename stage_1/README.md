@@ -33,4 +33,4 @@ This project is about creating an API that takes a number and returns an interes
 
 ## Deployment
 . Publicly accessible and stable API.
-. Fast response time < 500ms).
+. Fast response time (< 500ms).
