@@ -57,12 +57,17 @@ def classify_number():
     else:
         properties.append("even")
 
+    digit_sum = sum(int(d) for d in str(abs(num)))
+
+    if num < 0:
+        digit_sum = -digit_sum
+
     response = {
         "number": num,
         "is_prime": is_prime(num),
         "is_perfect": is_perfect(num),
         "properties": properties,
-        "digit_sum": sum(int(d) for d in str(abs(num))),
+        "digit_sum": digit_sum,
         "fun_fact": get_fun_fact(num)
     }
 
