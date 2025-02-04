@@ -9,19 +9,23 @@ app = Flask(__name__)
 def is_prime(n):
     if n < 2:
         return False
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
+    for i in range(2, int(abs(n) ** 0.5) + 1):
+        if abs(n) % i == 0:
             return False
     return True
 
 def is_perfect(n):
+    if n < 0:
+        return False
     return sum(i for i in range(1, n) if n % i == 0) == n
 
 
 def is_armstrong(n):
-    digits = [int(d) for d in str(n)]
+    if n < 0:
+        return False
+    digits = [int(d) for d in str(abs(n))]
     power = len(digits)
-    return sum(d ** power for d in digits) == n
+    return sum(d ** power for d in digits) == abs(n)
 
 
 def get_fun_fact(n):
@@ -37,27 +41,28 @@ def get_fun_fact(n):
 def classify_number():
     num_str = request.args.get("number")
 
-    if not num_str or not num_str.isdigit():
+    try:
+        num = int(num_str)
+    except (TypeError, ValueError):
         return jsonify({"number": num_str, "error": True}), 400
 
-    num = int(num_str)
 
     properties = []
+
+    if is_armstrong(num):
+        properties.append("armstrong")
 
     if num % 2 == 1:
         properties.append("odd")
     else:
         properties.append("even")
 
-    if is_armstrong(num):
-        properties.append("armstrong")
-
     response = {
         "number": num,
         "is_prime": is_prime(num),
         "is_perfect": is_perfect(num),
         "properties": properties,
-        "digit_sum": sum(int(d) for d in str(num)),
+        "digit_sum": sum(int(d) for d in str(abs(num))),
         "fun_fact": get_fun_fact(num)
     }
 
