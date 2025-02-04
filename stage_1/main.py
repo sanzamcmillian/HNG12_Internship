@@ -1,10 +1,12 @@
 from http.client import responses
 
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import requests
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 
 def is_prime(n):
@@ -38,7 +40,7 @@ def get_fun_fact(n):
         pass
     return f"{n} is an interesting number!"
 
-@app.route('/api/classify-number', methods=['GET'])
+@app.route('/classify-number', methods=['GET'])
 def classify_number():
     num_str = request.args.get("number")
 
