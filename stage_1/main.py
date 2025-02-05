@@ -3,7 +3,6 @@ from http.client import responses
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
-import os
 from functools import lru_cache
 
 app = Flask(__name__)
@@ -56,11 +55,14 @@ def classify_number():
     except (TypeError, ValueError):
         return jsonify({"number": num_str, "error": True}), 400
 
-
-    properties = ["even" if num % 2 == 0 else "odd"]
-
+    properties = []
     if is_armstrong(num):
         properties.append("armstrong")
+
+    if num % 2 == 1:
+        properties.append("odd")
+    else:
+        properties.append("even")
 
     digit_sum = sum(int(d) for d in str(abs(num)))
 
