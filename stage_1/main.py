@@ -30,8 +30,8 @@ def is_perfect(n):
 
 @lru_cache(maxsize=1024)
 def is_armstrong(n):
-    if n < 0:
-        return False
+    """if n < 0:
+        return False"""
     digits = list(map(int, str(abs(n))))
     power = len(digits)
     return sum(d ** power for d in digits) == abs(n)
