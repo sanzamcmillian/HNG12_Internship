@@ -8,6 +8,7 @@ from functools import lru_cache
 app = Flask(__name__)
 CORS(app)
 
+
 @lru_cache(maxsize=1024)
 def is_prime(n):
     if n < 2:
@@ -21,17 +22,17 @@ def is_prime(n):
             return False
     return True
 
+
 @lru_cache(maxsize=1024)
 def is_perfect(n):
     if n < 0:
         return False
-    total  = sum(i for i in range(1, int(n / 2) + 1) if n % i == 0)
+    total = sum(i for i in range(1, int(n / 2) + 1) if n % i == 0)
     return total == n
+
 
 @lru_cache(maxsize=1024)
 def is_armstrong(n):
-    """if n < 0:
-        return False"""
     digits = list(map(int, str(abs(n))))
     power = len(digits)
     return sum(d ** power for d in digits) == abs(n)
@@ -45,6 +46,7 @@ def get_fun_fact(n):
     except requests.exceptions.RequestException:
         pass
     return f"{n} is an interesting number!"
+
 
 @app.route('/classify-number', methods=['GET'])
 def classify_number():
@@ -76,6 +78,7 @@ def classify_number():
     }
 
     return jsonify(response), 200
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
